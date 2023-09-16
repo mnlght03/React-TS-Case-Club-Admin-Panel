@@ -1,10 +1,7 @@
 import React from "react";
 import UploadButton from "../Button/UploadButton";
 import PreviewButton from "../Button/PreviewButton";
-
-interface IHeaderProps {
-  title: string
-}
+import { IHeaderProps } from "../../interfaces/Header/IHeaderProps";
 
 export default function Header({title}: IHeaderProps) {
   return (

@@ -1,12 +1,9 @@
 import React from "react";
-
-interface IMainProps {
-  children: any;
-}
+import { IMainProps } from "../../interfaces/Main/IMainProps";
 
 export default function Main({children}: IMainProps) {
   return (
-    <main className="w-full">
+    <main className="w-full relative">
       {children}
     </main>
   );
