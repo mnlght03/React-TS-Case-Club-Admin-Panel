@@ -1,8 +1,11 @@
 export interface ICustomInputProps {
-  placeholder: string;
-  name: string;
+  placeholder?: string;
+  name?: string;
   label?: string;
   subscript?: string;
-  symbolLimit?: number;
+  limit?: number;
+  width?: string;
+  value?: string | number;
+  onChange?: ((e: any) => void) | ((e: any) => Promise<void>)
 }
  

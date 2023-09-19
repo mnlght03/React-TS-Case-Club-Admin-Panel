@@ -8,6 +8,7 @@ export default function ProjectsDnd({ items }: IProjectsDndProps) {
       <DragAndDrop droppableId={'Projects'}>
         {items.map((item) => (
           <ProjectDraggable
+            key={item.id}
             draggableId={item.id.toString()}
             index={item.id}
             title={item.title}
