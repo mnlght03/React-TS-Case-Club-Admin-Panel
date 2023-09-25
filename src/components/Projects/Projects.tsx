@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import Header from '../Header/Header';
-import Main from '../Main/Main';
 import ProjectsDnd from './DragAndDrop/ProjectsDnd';
 import BlueButton from '../Button/BlueButton';
 import { useProjects } from '../../hooks/Projects/useProjects';
@@ -25,7 +24,7 @@ export default function Projects() {
   };
 
   return (
-    <Main>
+    <>
       <Header title={'Реализованные проекты'} />
       <ProjectsHeader />
       <ProjectsDnd items={projects} />
@@ -42,6 +41,6 @@ export default function Projects() {
           <NewProjectForm onSubmit={addNewProject} />
         </ClosableWindow>
       )}
-    </Main>
+    </>
   );
 }

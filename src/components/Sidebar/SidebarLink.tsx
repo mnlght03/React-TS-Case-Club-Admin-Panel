@@ -1,20 +1,18 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
+import { ISidebarLinkProps } from '../../interfaces/Sidebar/ISidebarLinkProps';
 
-interface ISidebarLinkProps {
-  title: string;
-  href: string;
-  isActive: boolean;
-}
-
-export default function SidebarLink({ title, href, isActive }: ISidebarLinkProps) {
+export default function SidebarLink({ title, to }: ISidebarLinkProps) {
   return (
-    <a
-      href={href}
-      className={`p-3 w-full text-white mt-4 rounded-lg font-semibold ${
-        isActive ? 'bg-gray_menu_selected' : ''
-      }`}
+    <NavLink
+      to={to}
+      className={({ isActive }) =>
+        isActive
+          ? 'p-3 w-full text-white mt-4 rounded-lg font-semibold bg-gray_menu_selected'
+          : 'p-3 w-full text-white mt-4 rounded-lg font-semibold'
+      }
     >
       {title}
-    </a>
+    </NavLink>
   );
 }

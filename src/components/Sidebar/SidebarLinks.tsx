@@ -1,19 +1,45 @@
-import React from "react";
-import SidebarLink from "./SidebarLink";
-
+import React from 'react';
+import SidebarLink from './SidebarLink';
 
 export default function SidebarLinks() {
   return (
     <nav className="mt-9 flex flex-col">
-      <SidebarLink title={'Релизованные проекты'} href={'#'} isActive={true} />
-      <SidebarLink title={'С нами сотрудничали'} href={'#'} isActive={false} />
-      <SidebarLink title={'Текущие проекты'} href={'#'} isActive={false} />
-      <SidebarLink title={'Расписание мероприятий'} href={'#'} isActive={false} />
-      <SidebarLink title={'Истории успеха'} href={'#'} isActive={false} />
-      <SidebarLink title={'Наша команда'} href={'#'} isActive={false} />
-      <SidebarLink title={'Мероприятия / Галерея'} href={'#'} isActive={false} />
-      <SidebarLink title={'FAQ'} href={'#'} isActive={false} />
-      <SidebarLink title={'Обратная связь'} href={'#'} isActive={false} />
+      <SidebarLink
+        title={'Релизованные проекты'}
+        to={'/'}
+      />
+      <SidebarLink
+        title={'С нами сотрудничали'}
+        to={'/partners'}
+      />
+      <SidebarLink
+        title={'Текущие проекты'}
+        to={'/current-projects'}
+      />
+      <SidebarLink
+        title={'Расписание мероприятий'}
+        to={'/schedule'}
+      />
+      <SidebarLink
+        title={'Истории успеха'}
+        to={'/success-stories'}
+      />
+      <SidebarLink
+        title={'Наша команда'}
+        to={'/our-team'}
+      />
+      <SidebarLink
+        title={'Мероприятия / Галерея'}
+        to={'/gallery'}
+      />
+      <SidebarLink
+        title={'FAQ'}
+        to={'/faq'}
+      />
+      <SidebarLink
+        title={'Обратная связь'}
+        to={'/feedback'}
+      />
     </nav>
   );
 }
