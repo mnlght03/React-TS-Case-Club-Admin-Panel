@@ -1,4 +1,8 @@
+import { ChangesStatus } from '../../enums/ChangesStatus';
+
 export interface IHeaderProps {
-  title: string
-  onClose?: () => void
+  title: string;
+  status?: ChangesStatus;
+  onClose?: () => void;
+  onUpload?: () => Promise<void>;
 }

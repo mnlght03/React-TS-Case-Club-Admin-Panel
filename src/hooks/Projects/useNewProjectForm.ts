@@ -13,7 +13,7 @@ export function useNewProjectForm() {
   });
 
   const setProjectTitle = (title: string) => {
-    setNewProject({ ...newProject, title: title.trim() });
+    setNewProject({ ...newProject, title: title });
   };
 
   const setProjectThisYear = (value: boolean) => {

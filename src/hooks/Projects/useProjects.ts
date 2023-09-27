@@ -23,9 +23,9 @@ export function useProjects() {
   };
 
   const deleteProject = (project: IProject) => {
+    if (!newProjects.includes(project)) setDeletedProjects([...deletedProjects, project]);
     setNewProjects(newProjects.filter((p) => p.id !== project.id));
     setProjects(projects.filter((p) => p.id !== project.id));
-    setDeletedProjects([...deletedProjects, project]);
   };
 
   const onDragEnd = (result: any) => {
@@ -43,6 +43,11 @@ export function useProjects() {
     setProjects([...projects]);
   };
 
+  const publishChanges = async () => {
+    await ProjectsService.uploadNewProjects(newProjects);
+    await ProjectsService.deleteProjects(deletedProjects);
+  };
+
   return {
     projects,
     newProjects,
@@ -50,5 +55,6 @@ export function useProjects() {
     addNewProject,
     deleteProject,
     onDragEnd,
+    publishChanges,
   };
 }
