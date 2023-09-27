@@ -1,4 +1,4 @@
-import { IDraggableProps } from "../DragAndDrop/IDraggableProps";
+import { IDraggableProps } from '../DragAndDrop/IDraggableProps';
 
 export interface IProjectStageDraggableProps extends IDraggableProps {
   name: string;

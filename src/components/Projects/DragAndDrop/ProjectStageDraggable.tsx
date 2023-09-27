@@ -10,11 +10,15 @@ export default function ProjectStageDraggable({
   timeframe,
   coverage,
   attendee,
+  onEdit,
+  onDelete
 }: IProjectStageDraggableProps) {
   return (
     <DraggableItem
       draggableId={draggableId}
       index={index}
+      onEdit={onEdit}
+      onDelete={onDelete}
     >
       <div className="w-80 font-medium">{name}</div>
       <div className="w-80 font-medium ml-8">{timeframe}</div>

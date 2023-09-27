@@ -1,7 +1,7 @@
 import React from 'react';
 import { ICustomInputProps } from '../../../interfaces/Input/ICustomInputProps';
 
-export default function FileInput({
+export default function ImageInput({
   placeholder,
   name,
   label,
@@ -17,6 +17,7 @@ export default function FileInput({
         name={name}
         placeholder={placeholder}
         type="file"
+        accept='image/*'
         className="p-4 rounded-xl border border-solid border-gray_text_inactive focus:outline-gray_caption"
         onChange={onChange}
       />

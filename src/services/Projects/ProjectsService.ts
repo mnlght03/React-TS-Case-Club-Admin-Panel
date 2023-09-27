@@ -14,15 +14,15 @@ export default class ProjectsService {
       {
         id: 2,
         priorityId: 1,
-        title: 'Курс по Product Owner-тематике и кейс-чемпионат совместно с Билайн',
+        title: 'QWEASD',
         isThisYear: true,
-        logoUrl: 'beeline.png',
+        logoUrl: 'beelinebeelinebeelineBIGFILENAME.png',
         stages: []
       },
       {
         id: 3,
         priorityId: 1,
-        title: 'Курс по Product Owner-тематике и кейс-чемпионат совместно с Билайн',
+        title: 'ZXCVBN',
         isThisYear: true,
         logoUrl: 'beeline.png',
         stages: []

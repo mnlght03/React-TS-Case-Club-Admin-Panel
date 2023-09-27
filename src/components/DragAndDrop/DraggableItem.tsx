@@ -4,8 +4,15 @@ import { Draggable } from 'react-beautiful-dnd';
 import { ReactComponent as IconDrag } from '../../assets/icons/icon-drag.svg';
 import { ReactComponent as IconEdit } from '../../assets/icons/icon-edit.svg';
 import { ReactComponent as IconTrash } from '../../assets/icons/icon-trash.svg';
+import { IDraggableProps } from '../../interfaces/DragAndDrop/IDraggableProps';
 
-export default function DraggableItem({ draggableId, index, children }: IProps) {
+export default function DraggableItem({
+  draggableId,
+  index,
+  children,
+  onEdit,
+  onDelete,
+}: IDraggableProps) {
   return (
     <Draggable
       draggableId={draggableId}
@@ -21,8 +28,14 @@ export default function DraggableItem({ draggableId, index, children }: IProps) 
             <IconDrag className="cursor-pointer mr-9" />
           </div>
           {children}
-          <IconEdit className="cursor-pointer ml-auto" />
-          <IconTrash className="cursor-pointer ml-4" />
+          <IconEdit
+            className="cursor-pointer ml-auto"
+            onClick={onEdit}
+          />
+          <IconTrash
+            className="cursor-pointer ml-4"
+            onClick={onDelete}
+          />
         </li>
       )}
     </Draggable>

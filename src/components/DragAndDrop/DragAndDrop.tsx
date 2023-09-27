@@ -1,10 +1,10 @@
 import React from 'react';
 import { DragDropContext, Droppable } from 'react-beautiful-dnd';
 
-export default function DragAndDrop({ droppableId, children }: IDragAndDropProps) {
+export default function DragAndDrop({ droppableId, children, onDragEnd }: IDragAndDropProps) {
   return (
     <>
-      <DragDropContext>
+      <DragDropContext onDragEnd={onDragEnd}>
         <Droppable droppableId={droppableId}>
           {(provided: any) => (
             <ul

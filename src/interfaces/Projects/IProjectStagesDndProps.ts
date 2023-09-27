@@ -1,5 +1,6 @@
+import { IDragAndDropProps } from '../DragAndDrop/IDragAndDropProps';
 import { IProjectStage } from './models/IProjectStage';
 
-export interface IProjectStagesDndProps {
+export interface IProjectStagesDndProps extends IDragAndDropProps {
   items: IProjectStage[];
 }
