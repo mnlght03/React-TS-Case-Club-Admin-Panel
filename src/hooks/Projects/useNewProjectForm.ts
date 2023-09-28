@@ -68,6 +68,12 @@ export function useNewProjectForm() {
     setNewProject({ ...newProject });
   };
 
+  const updateFile = (e) => {
+    const file = e.target.files[0]
+    if (!file) return;
+    setNewProject({...newProject, logoFile: file, logoUrl: file.name})
+  }
+
   return {
     newProject,
     setProjectTitle,
@@ -76,6 +82,7 @@ export function useNewProjectForm() {
     setProjectLogoUrl,
     addStage,
     deleteStage,
+    updateFile,
     clearNewProject,
     onDragEnd,
   };

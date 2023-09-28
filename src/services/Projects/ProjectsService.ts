@@ -1,10 +1,11 @@
 import axios from 'axios';
 import { IProject } from '../../interfaces/Projects/models/IProject';
+import { IService } from '../../interfaces/Service/IService';
 
-export default class ProjectsService {
-  static API_URL = import.meta.env.VITE_API_BASE + 'implemented-project/';
+export default class ProjectsService implements IService<IProject> {
+  API_URL = import.meta.env.VITE_API_BASE + 'implemented-project/';
 
-  static async fetchAll(): Promise<IProject[]> {
+  async fetchAll(): Promise<IProject[]> {
     // const data = await axios.get('http://caseclub-nsu.ru/implemented-project/get-all')
     // console.log(data);
     return [
@@ -35,7 +36,7 @@ export default class ProjectsService {
     ];
   }
 
-  static async uploadNewProjects(projects: IProject[]): Promise<void> {
+  async uploadAll(projects: IProject[]): Promise<void> {
     if (projects.length === 0) return;
 
     await Promise.all(
@@ -47,7 +48,7 @@ export default class ProjectsService {
 
         return axios({
           method: 'post',
-          url: ProjectsService.API_URL + 'create',
+          url: this.API_URL + 'create',
           data: formData,
           headers: { 'Content-Type': 'multipart/form-data' },
         });
@@ -55,12 +56,12 @@ export default class ProjectsService {
     );
   }
 
-  static async deleteProjects(projects: IProject[]): Promise<void> {
+  async deleteAll(projects: IProject[]): Promise<void> {
     if (projects.length === 0) return;
 
     await Promise.all(
       projects.map((project) => {
-        return axios.delete(ProjectsService.API_URL + `delete/${project.id}`);
+        return axios.delete(this.API_URL + `delete/${project.id}`);
       })
     );
   }

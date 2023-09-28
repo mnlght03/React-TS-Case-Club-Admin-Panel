@@ -1,38 +1,26 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import Header from '../Header/Header';
 import ProjectsDnd from './DragAndDrop/ProjectsDnd';
 import BlueButton from '../Button/BlueButton';
-import { useProjects } from '../../hooks/Projects/useProjects';
 import ProjectsHeader from './ProjectsHeader';
 import ClosableWindow from '../ClosableWindow/ClosableWindow';
 import NewProjectForm from './NewProject/NewProjectForm';
 import { ChangesStatus } from '../../enums/ChangesStatus';
+import { usePage } from '../../hooks/Page/usePage';
+import { IProject } from '../../interfaces/Projects/models/IProject';
+import ProjectsService from '../../services/Projects/ProjectsService';
 
 export default function Projects() {
   const [isVisible, setIsVisible] = useState<boolean>(false);
+
   const {
-    projects,
-    newProjects,
-    deletedProjects,
-    addNewProject,
-    deleteProject,
+    items: projects,
+    status,
+    addNewItem: addNewProject,
+    deleteItem: deleteProject,
     onDragEnd,
-    publishChanges
-  } = useProjects();
-
-  const [status, setStatus] = useState<ChangesStatus | null>(null);
-
-  useEffect(() => {
-    if (status === undefined || status === null) {
-      setStatus(ChangesStatus.NONE);
-      return;
-    }
-    setStatus(
-      (newProjects.length > 0 || deletedProjects.length > 0)
-        ? ChangesStatus.SOME_UNPUBLISHED
-        : ChangesStatus.ALL_PUBLISHED
-    );
-  }, [newProjects, deletedProjects]);
+    publishChanges,
+  } = usePage<IProject>(new ProjectsService());
 
   return (
     <>
