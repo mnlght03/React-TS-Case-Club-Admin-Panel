@@ -20,7 +20,7 @@ export default function DraggableItem({
     >
       {(provided: any) => (
         <li
-          className="flex px-10 py-6 w-full border-t border-b border-gray_button_inactive bg-white"
+          className="flex items-center px-10 py-6 w-full border-t border-b border-gray_button_inactive bg-white"
           ref={provided.innerRef}
           {...provided.draggableProps}
         >

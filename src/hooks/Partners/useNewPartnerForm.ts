@@ -15,7 +15,7 @@ export function useNewPartnerForm() {
     setNewPartner({ ...newPartner, text: value });
   };
 
-  const setPartnerAttendees = (value: number) => {
+  const setPartnerAttendees = (value: string) => {
     setNewPartner({ ...newPartner, attendees: value });
   };
 
@@ -32,7 +32,7 @@ export function useNewPartnerForm() {
       id: Date.now(),
       priorityId: 0,
       text: '',
-      attendees: 0,
+      attendees: '',
       logoUrl: '',
       logoFile: undefined,
     });
