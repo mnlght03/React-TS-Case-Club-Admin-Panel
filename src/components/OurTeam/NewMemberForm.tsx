@@ -32,6 +32,7 @@ export default function NewMemberForm({ onSubmit }: IFormProps<ITeamMember>) {
           label="Имя и фамилия"
           placeholder="Имя и фамилия"
           subscript="Не больше 20 символов, включая пробелы и знаки препинания"
+          limit={20}
           width="350px"
           onChange={setMemberName}
           required
@@ -48,6 +49,7 @@ export default function NewMemberForm({ onSubmit }: IFormProps<ITeamMember>) {
           label="Роль в клубе"
           placeholder="Роль в клубе"
           subscript="Не больше 20 символов"
+          limit={20}
           width="350px"
           onChange={setMemberRole}
           required
@@ -57,6 +59,7 @@ export default function NewMemberForm({ onSubmit }: IFormProps<ITeamMember>) {
         <SelectInput
           label="Цвет роли"
           subscript="Не больше 20 символов, включая пробелы и знаки препинания"
+          limit={20}
           width="350px"
           onChange={setMemberTagColor}
           required

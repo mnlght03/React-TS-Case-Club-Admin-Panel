@@ -32,30 +32,34 @@ export default function AddStageForm({ addStageFn }: IProps) {
         <TextInput
           width="320px"
           subscript="Не больше 70 символов, включая пробелы и знаки препинания"
+          limit={70}
           placeholder="Название этапа"
           value={newStage.name}
-          onChange={(e) => setNewStageName(e.target.value)}
+          onChange={setNewStageName}
+          required
         />
         <TextInput
           width="320px"
           subscript="Не больше 30 символов, включая пробелы и знаки препинания"
           placeholder="Временной интервал"
+          limit={30}
           value={newStage.timeframe}
-          onChange={(e) => setNewStageTimeframe(e.target.value)}
+          onChange={setNewStageTimeframe}
+          required
         />
         <TextInput
           width="176px"
           subscript="Можно оставить поле пустым"
           placeholder="Охват"
           value={newStage.coverage}
-          onChange={(e) => setNewStageCoverage(e.target.value)}
+          onChange={setNewStageCoverage}
         />
         <TextInput
           width="176px"
           subscript="Можно оставить поле пустым"
           placeholder="Участники"
           value={newStage.attendee}
-          onChange={(e) => setNewStageAttendee(e.target.value)}
+          onChange={setNewStageAttendee}
         />
         {isFormFilled ? (
           <IconAddActive

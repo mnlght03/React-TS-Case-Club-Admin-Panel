@@ -7,6 +7,7 @@ import { ReactComponent as IconAddInactive } from '../../assets/icons/icon-add-i
 import { ReactComponent as IconAddActive } from '../../assets/icons/icon-add-active.svg';
 import { useNewPartnerForm } from '../../hooks/Partners/useNewPartnerForm';
 import { IPartner } from '../../interfaces/Partners/IPartner';
+import Input from '../ui/Input/Input';
 
 
 export default function AddPartnerForm({ onSubmit }: IFormProps<IPartner>) {
@@ -35,21 +36,25 @@ export default function AddPartnerForm({ onSubmit }: IFormProps<IPartner>) {
         <TextInput
           width="384px"
           subscript="Не больше 60 символов, включая пробелы и знаки препинания"
+          limit={60}
           placeholder="Текст о сотрудничестве"
           value={newPartner.text}
           onChange={setPartnerText}
+          required
         />
-        <TextInput
+        <TextInput 
           width="176px"
           placeholder="Кол-во участников"
           value={newPartner.attendees}
           onChange={setPartnerAttendees}
+          required
         />
         <ImageInput
           width="256px"
           placeholder="Логотип компании"
           subscript='Логотип должен быть без фона, и не больше 5 МБ'
           onChange={updateFile}
+          required
         />
         {isFormFilled ? (
           <IconAddActive

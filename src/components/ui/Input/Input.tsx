@@ -7,7 +7,7 @@ export default function Input({
   name,
   label,
   subscript,
-  limit,
+  value,
   width,
   type,
   accept,
@@ -23,6 +23,7 @@ export default function Input({
       <input
         name={name}
         placeholder={placeholder}
+        value={value}
         type={type}
         accept={accept}
         className="p-4 rounded-xl border border-solid border-gray_text_inactive focus:outline-gray_caption"

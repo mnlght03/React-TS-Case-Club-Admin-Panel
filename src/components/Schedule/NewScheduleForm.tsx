@@ -34,6 +34,7 @@ export default function NewSchdeuleForm({ onSubmit }: IFormProps<ISchedule>) {
           label="Название мероприятия"
           placeholder="Введите здесь"
           subscript="Не больше 35 символов, включая пробелы и знаки препинания"
+          limit={35}
           width="350px"
           onChange={setScheduleName}
           required
@@ -42,6 +43,7 @@ export default function NewSchdeuleForm({ onSubmit }: IFormProps<ISchedule>) {
           label="Описание мероприятия"
           placeholder="Введите здесь"
           subscript="Не больше 140 символов, включая пробелы и знаки препинания"
+          limit={140}
           width="350px"
           onChange={setScheduleDescription}
           required
@@ -50,6 +52,7 @@ export default function NewSchdeuleForm({ onSubmit }: IFormProps<ISchedule>) {
           label="Даты проведения"
           placeholder="Введите здесь"
           subscript="Не больше 20 символов, включая пробелы и знаки препинания"
+          limit={20}
           width="350px"
           onChange={setScheduleDate}
           required
@@ -60,6 +63,7 @@ export default function NewSchdeuleForm({ onSubmit }: IFormProps<ISchedule>) {
           label="Ссылка на подачу заявки"
           placeholder="Введите здесь"
           subscript="Не больше 100 символов, включая пробелы и знаки препинания"
+          limit={100}
           width="350px"
           onChange={setScheduleRegistrationLink}
           required
@@ -68,6 +72,7 @@ export default function NewSchdeuleForm({ onSubmit }: IFormProps<ISchedule>) {
           label="Текст первичного тега"
           placeholder="Введите здесь"
           subscript="Не больше 15 символов, включая пробелы и знаки препинания"
+          limit={15}
           width="350px"
           onChange={setScheduleFirstTag}
           required
@@ -76,6 +81,7 @@ export default function NewSchdeuleForm({ onSubmit }: IFormProps<ISchedule>) {
           label="Текст вторичного тега"
           placeholder="Введите здесь"
           subscript="Не больше 115 символов, включая пробелы и знаки препинания"
+          limit={115}
           width="350px"
           onChange={setScheduleSecondTag}
           required
