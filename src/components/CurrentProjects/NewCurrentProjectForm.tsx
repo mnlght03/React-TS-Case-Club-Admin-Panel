@@ -5,8 +5,9 @@ import FormInputRow from '../Projects/NewProject/FormInputRow';
 import TextInput from '../ui/Input/TextInput';
 import BlueButton from '../Button/BlueButton';
 import Input from '../ui/Input/Input';
+import { ICurrentProject } from '../../interfaces/CurrentProjects/ICurrentProject';
 
-export default function NewCurrentProjectForm({ onSubmit }: IFormProps) {
+export default function NewCurrentProjectForm({ onSubmit }: IFormProps<ICurrentProject>) {
   const {
     newProject,
     setProjectName,

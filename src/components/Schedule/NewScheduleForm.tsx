@@ -35,7 +35,7 @@ export default function NewSchdeuleForm({ onSubmit }: IFormProps<ISchedule>) {
           placeholder="Введите здесь"
           subscript="Не больше 35 символов, включая пробелы и знаки препинания"
           width="350px"
-          onChange={(e) => setScheduleName(e.target.value)}
+          onChange={setScheduleName}
           required
         />
         <TextInput
@@ -43,7 +43,7 @@ export default function NewSchdeuleForm({ onSubmit }: IFormProps<ISchedule>) {
           placeholder="Введите здесь"
           subscript="Не больше 140 символов, включая пробелы и знаки препинания"
           width="350px"
-          onChange={(e) => setScheduleDescription(e.target.value)}
+          onChange={setScheduleDescription}
           required
         />
         <TextInput
@@ -51,7 +51,7 @@ export default function NewSchdeuleForm({ onSubmit }: IFormProps<ISchedule>) {
           placeholder="Введите здесь"
           subscript="Не больше 20 символов, включая пробелы и знаки препинания"
           width="350px"
-          onChange={(e) => setScheduleDate(e.target.value)}
+          onChange={setScheduleDate}
           required
         />
       </FormInputRow>
@@ -61,7 +61,7 @@ export default function NewSchdeuleForm({ onSubmit }: IFormProps<ISchedule>) {
           placeholder="Введите здесь"
           subscript="Не больше 100 символов, включая пробелы и знаки препинания"
           width="350px"
-          onChange={(e) => setScheduleRegistrationLink(e.target.value)}
+          onChange={setScheduleRegistrationLink}
           required
         />
         <TextInput
@@ -69,7 +69,7 @@ export default function NewSchdeuleForm({ onSubmit }: IFormProps<ISchedule>) {
           placeholder="Введите здесь"
           subscript="Не больше 15 символов, включая пробелы и знаки препинания"
           width="350px"
-          onChange={(e) => setScheduleFirstTag(e.target.value)}
+          onChange={setScheduleFirstTag}
           required
         />
         <TextInput
@@ -77,7 +77,7 @@ export default function NewSchdeuleForm({ onSubmit }: IFormProps<ISchedule>) {
           placeholder="Введите здесь"
           subscript="Не больше 115 символов, включая пробелы и знаки препинания"
           width="350px"
-          onChange={(e) => setScheduleSecondTag(e.target.value)}
+          onChange={setScheduleSecondTag}
           required
         />
       </FormInputRow>
@@ -88,7 +88,7 @@ export default function NewSchdeuleForm({ onSubmit }: IFormProps<ISchedule>) {
           label="Цвет тегов"
           subscript="Это повлияет на цвет тегов"
           width="350px"
-          onChange={(e) => setScheduleTagColor(e.target.value)}
+          onChange={setScheduleTagColor}
         />
       </FormInputRow>
       <BlueButton

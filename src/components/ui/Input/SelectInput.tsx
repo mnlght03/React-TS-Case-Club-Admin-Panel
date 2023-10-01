@@ -10,6 +10,10 @@ export default function SelectInput({
   width,
   onChange,
 }: ISelectInputProps) {
+  const onChangeFn = (e) => {
+    onChange && onChange(e.target.value);
+  };
+  
   return (
     <div
       className="flex flex-col"
@@ -19,7 +23,7 @@ export default function SelectInput({
       <select
         name={name}
         className="p-4 border border-solid border-gray_text_inactive focus:outline-gray_caption rounded-xl"
-        onChange={onChange}
+        onChange={onChangeFn}
       >
         {options.map((option) => (
           <option value={option}>{option}</option>

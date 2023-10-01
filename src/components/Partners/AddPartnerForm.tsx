@@ -6,9 +6,10 @@ import ImageInput from '../ui/Input/ImageInput';
 import { ReactComponent as IconAddInactive } from '../../assets/icons/icon-add-inactive.svg';
 import { ReactComponent as IconAddActive } from '../../assets/icons/icon-add-active.svg';
 import { useNewPartnerForm } from '../../hooks/Partners/useNewPartnerForm';
+import { IPartner } from '../../interfaces/Partners/IPartner';
 
 
-export default function AddPartnerForm({ onSubmit }: IFormProps) {
+export default function AddPartnerForm({ onSubmit }: IFormProps<IPartner>) {
   const {
     newPartner,
     setPartnerText,
@@ -36,13 +37,13 @@ export default function AddPartnerForm({ onSubmit }: IFormProps) {
           subscript="Не больше 60 символов, включая пробелы и знаки препинания"
           placeholder="Текст о сотрудничестве"
           value={newPartner.text}
-          onChange={(e) => setPartnerText(e.target.value)}
+          onChange={setPartnerText}
         />
         <TextInput
           width="176px"
           placeholder="Кол-во участников"
           value={newPartner.attendees}
-          onChange={(e) => setPartnerAttendees(e.target.value)}
+          onChange={setPartnerAttendees}
         />
         <ImageInput
           width="256px"

@@ -8,8 +8,9 @@ import AddStageForm from './AddStageForm';
 import BlueButton from '../../Button/BlueButton';
 import { IFormProps } from '../../../interfaces/Form/IFormProps';
 import { useNewProjectForm } from '../../../hooks/Projects/useNewProjectForm';
+import { IProject } from '../../../interfaces/Projects/models/IProject';
 
-export default function NewProjectForm({ onSubmit }: IFormProps) {
+export default function NewProjectForm({ onSubmit }: IFormProps<IProject>) {
   const {
     newProject,
     setProjectTitle,
@@ -37,7 +38,7 @@ export default function NewProjectForm({ onSubmit }: IFormProps) {
           subscript="Не больше 110 символов, включая пробелы и знаки препинания"
           limit={110}
           value={newProject.title}
-          onChange={(e) => setProjectTitle(e.target.value)}
+          onChange={setProjectTitle}
         />
         <ImageInput
           placeholder={'Загрузить картинку'}

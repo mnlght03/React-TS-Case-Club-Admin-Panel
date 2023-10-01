@@ -33,7 +33,7 @@ export default function NewMemberForm({ onSubmit }: IFormProps<ITeamMember>) {
           placeholder="Имя и фамилия"
           subscript="Не больше 20 символов, включая пробелы и знаки препинания"
           width="350px"
-          onChange={(e) => setMemberName(e.target.value)}
+          onChange={setMemberName}
           required
         />
         <TextInput
@@ -41,7 +41,7 @@ export default function NewMemberForm({ onSubmit }: IFormProps<ITeamMember>) {
           placeholder="Ник в телеграм"
           subscript="Без @, например, NikFivePro"
           width="350px"
-          onChange={(e) => setMemberTelegram(e.target.value)}
+          onChange={setMemberTelegram}
           required
         />
         <TextInput
@@ -49,7 +49,7 @@ export default function NewMemberForm({ onSubmit }: IFormProps<ITeamMember>) {
           placeholder="Роль в клубе"
           subscript="Не больше 20 символов"
           width="350px"
-          onChange={(e) => setMemberRole(e.target.value)}
+          onChange={setMemberRole}
           required
         />
       </FormInputRow>
@@ -58,7 +58,7 @@ export default function NewMemberForm({ onSubmit }: IFormProps<ITeamMember>) {
           label="Цвет роли"
           subscript="Не больше 20 символов, включая пробелы и знаки препинания"
           width="350px"
-          onChange={(e) => setMemberTagColor(e.target.value)}
+          onChange={setMemberTagColor}
           required
           name={'color'}
           options={Object.values(TagColor)}
