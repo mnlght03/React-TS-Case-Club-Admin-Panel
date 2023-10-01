@@ -5,7 +5,7 @@ import PartnersDnd from './PartnersDnd';
 import AddPartnerForm from './AddPartnerForm';
 import { usePage } from '../../hooks/Page/usePage';
 import PartnersService from '../../services/Partners/PartnersService';
-import { ChangesStatus } from '../../enums/ChangesStatus';
+import { ChangesStatus } from '../../interfaces/enums/ChangesStatus';
 
 export default function Partners() {
   const {

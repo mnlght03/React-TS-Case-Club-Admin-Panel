@@ -2,7 +2,7 @@ import React from "react";
 import UploadButton from "../Button/UploadButton";
 import PreviewButton from "../Button/PreviewButton";
 import { IHeaderProps } from "../../interfaces/Header/IHeaderProps";
-import { ChangesStatus } from "../../enums/ChangesStatus";
+import { ChangesStatus } from "../../interfaces/enums/ChangesStatus";
 import Status from "./Status";
 
 export default function Header({title, status, onUpload}: IHeaderProps) {

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Header from '../Header/Header';
 import CurrentProjectsService from '../../services/CurrentProjects/CurrentProjectsService';
 import { usePage } from '../../hooks/Page/usePage';
-import { ChangesStatus } from '../../enums/ChangesStatus';
+import { ChangesStatus } from '../../interfaces/enums/ChangesStatus';
 import BlueButton from '../Button/BlueButton';
 import ClosableWindow from '../ClosableWindow/ClosableWindow';
 import NewCurrentProjectForm from './NewCurrentProjectForm';

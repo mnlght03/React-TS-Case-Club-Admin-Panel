@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { ChangesStatus } from '../../enums/ChangesStatus';
+import { ChangesStatus } from '../../interfaces/enums/ChangesStatus';
 
 export function useChangesStatus(added, deleted) {
   const [status, setStatus] = useState<ChangesStatus | null>(null);

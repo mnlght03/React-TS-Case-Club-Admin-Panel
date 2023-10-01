@@ -1,4 +1,4 @@
-import { ChangesStatus } from '../../enums/ChangesStatus';
+import { ChangesStatus } from '../enums/ChangesStatus';
 
 export interface IHeaderProps {
   title: string;

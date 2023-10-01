@@ -1,7 +1,8 @@
-export interface IDragAndDropProps {
+export interface IDragAndDropProps<T> {
+  items: T[];
   droppableId: string;
   children?: React.ReactNode;
   onDragEnd?: (result: any) => void;
-  onEdit?: (item: any) => void;
-  onDelete?: (item: any) => void;
+  onEdit?: (item: T) => void;
+  onDelete?: (item: T) => void;
 }

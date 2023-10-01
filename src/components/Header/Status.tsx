@@ -1,5 +1,5 @@
 import React from 'react';
-import { ChangesStatus } from '../../enums/ChangesStatus';
+import { ChangesStatus } from '../../interfaces/enums/ChangesStatus';
 
 interface IProps {
   status: ChangesStatus;
