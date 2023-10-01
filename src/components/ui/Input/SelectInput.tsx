@@ -8,15 +8,17 @@ export default function SelectInput({
   label,
   subscript,
   width,
-  onChange
+  onChange,
 }: ISelectInputProps) {
   return (
-    <div className='flex flex-col'>
-    {label && <InputLabel label={label} />}
+    <div
+      className="flex flex-col"
+      style={{ width: width }}
+    >
+      {label && <InputLabel label={label} />}
       <select
         name={name}
-        style={{ width: width }}
-        className='p-4 border border-solid border-gray_text_inactive focus:outline-gray_caption rounded-xl'
+        className="p-4 border border-solid border-gray_text_inactive focus:outline-gray_caption rounded-xl"
         onChange={onChange}
       >
         {options.map((option) => (

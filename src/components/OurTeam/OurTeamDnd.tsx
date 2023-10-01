@@ -1,16 +1,16 @@
 import React from "react";
 import DragAndDrop from "../DragAndDrop/DragAndDrop";
-import CurrentProjectDraggable from "./CurrentProjectDraggable";
 import { IDragAndDropProps } from "../../interfaces/DragAndDrop/IDragAndDropProps";
-import { ICurrentProject } from "../../interfaces/CurrentProjects/ICurrentProject";
+import { ITeamMember } from "../../interfaces/OurTeam/models/ITeamMember";
+import OurTeamDraggable from "./OurTeamDraggable";
 
-export default function CurrentProjectsDnd({
+export default function OurTeamDnd({
   items,
   droppableId,
   onDragEnd,
   onEdit,
   onDelete,
-}: IDragAndDropProps<ICurrentProject>) {
+}: IDragAndDropProps<ITeamMember>) {
   return (
     <>
       <DragAndDrop
@@ -18,13 +18,14 @@ export default function CurrentProjectsDnd({
         droppableId={droppableId}
       >
         {items.map((item, idx) => (
-          <CurrentProjectDraggable
+          <OurTeamDraggable
             key={item.id}
             draggableId={item.id.toString()}
             index={idx}
             name={item.name}
-            description={item.description}
-            presentationUrl={item.presentationFileUrl ?? ''}
+            telegram={item.telegram}
+            role={item.role}
+            tagColor={item.tagColor}
             onEdit={() => onEdit && onEdit(item)}
             onDelete={() => onDelete && onDelete(item)}
           />
