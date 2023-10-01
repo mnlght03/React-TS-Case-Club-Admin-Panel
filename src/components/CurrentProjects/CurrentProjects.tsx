@@ -40,7 +40,7 @@ export default function CurrentProjects() {
         text={'Добавить'}
         classes="ml-10 mt-6"
       />
-      {/* {isVisible && (
+      {isVisible && (
         <ClosableWindow
           onClose={() => setIsVisible(false)}
           title={'Новый текущий проект'}
@@ -53,7 +53,7 @@ export default function CurrentProjects() {
             }}
           />
         </ClosableWindow>
-      )} */}
+      )}
     </>
   );
 }

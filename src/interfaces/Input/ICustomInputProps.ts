@@ -6,6 +6,8 @@ export interface ICustomInputProps {
   limit?: number;
   width?: string;
   value?: string | number;
-  onChange?: ((e: any) => void) | ((e: any) => Promise<void>)
+  required?: boolean;
+  type?: string;
+  accept?: string;
+  onChange?: ((e: any) => void) | ((e: any) => Promise<void>);
 }
- 

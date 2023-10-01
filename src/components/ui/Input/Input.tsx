@@ -1,13 +1,15 @@
 import React from 'react';
 import { ICustomInputProps } from '../../../interfaces/Input/ICustomInputProps';
 
-export default function TextInput({
+export default function Input({
   placeholder,
   name,
   label,
   subscript,
-  value,
+  limit,
   width,
+  type,
+  accept,
   required,
   onChange,
 }: ICustomInputProps) {
@@ -20,8 +22,8 @@ export default function TextInput({
       <input
         name={name}
         placeholder={placeholder}
-        type="text"
-        value={value}
+        type={type}
+        accept={accept}
         className="p-4 rounded-xl border border-solid border-gray_text_inactive focus:outline-gray_caption"
         onChange={onChange}
         required={required}
