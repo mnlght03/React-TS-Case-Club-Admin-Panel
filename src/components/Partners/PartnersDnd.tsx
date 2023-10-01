@@ -1,4 +1,5 @@
-import { IPartnersDndProps } from "../../interfaces/Partners/IPartnersDndProps";
+import { IDragAndDropProps } from "../../interfaces/DragAndDrop/IDragAndDropProps";
+import { IPartner } from "../../interfaces/Partners/IPartner";
 import DragAndDrop from "../DragAndDrop/DragAndDrop";
 import PartnerDraggable from "./PartnerDraggable";
 
@@ -8,7 +9,7 @@ export default function PartnersDnd({
   onDragEnd,
   onEdit,
   onDelete,
-}: IPartnersDndProps) {
+}: IDragAndDropProps<IPartner>) {
   return (
     <>
       <DragAndDrop

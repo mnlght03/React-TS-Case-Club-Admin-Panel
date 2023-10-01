@@ -1,3 +1,3 @@
-export interface IFormProps {
-  onSubmit: (item: any) => void;
+export interface IFormProps<T> {
+  onSubmit: (item: T) => void;
 }

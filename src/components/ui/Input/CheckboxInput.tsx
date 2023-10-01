@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { ReactComponent as IconChecked } from '../../../assets/icons/icon-checked.svg';
 import { ReactComponent as IconUnchecked } from '../../../assets/icons/icon-unchecked.svg';
 import { ICheckboxInputProps } from '../../../interfaces/Input/ICheckboxInputProps';
+import InputLabel from './InputLabel';
 
 export default function CheckboxInput({
   label,
@@ -26,7 +27,7 @@ export default function CheckboxInput({
       className="flex flex-col"
       style={{ width: width }}
     >
-      {label && <label className="mb-4 font-semibold text-lg">{label}</label>}
+      {label && <InputLabel label={label} />}
       <div
         onClick={() => setIsChecked(!isChecked)}
         className="py-4 cursor-pointer w-fit"

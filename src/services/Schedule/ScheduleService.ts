@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { IService } from '../../interfaces/Service/IService';
 import { ISchedule } from '../../interfaces/Schedule/models/ISchedule';
-import { TagColor } from '../../interfaces/enums/TagColor';
+import { TagColor } from '../../enums/TagColor';
 
 export default class ScheduleService implements IService<ISchedule> {
   API_URL = import.meta.env.VITE_API_BASE + 'schedule/';

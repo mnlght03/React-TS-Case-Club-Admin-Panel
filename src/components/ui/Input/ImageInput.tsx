@@ -1,5 +1,6 @@
 import React from 'react';
 import { ICustomInputProps } from '../../../interfaces/Input/ICustomInputProps';
+import InputLabel from './InputLabel';
 
 export default function ImageInput({
   placeholder,
@@ -12,7 +13,7 @@ export default function ImageInput({
 }: ICustomInputProps) {
   return (
     <div className="flex flex-col" style={{width: width}}>
-      {label && <label className="mb-4 font-semibold text-lg">{label}</label>}
+      {label && <InputLabel label={label} />}
       <input
         name={name}
         placeholder={placeholder}

@@ -1,7 +1,8 @@
 import React from "react";
-import { ICurrentProjectsDndProps } from "../../interfaces/CurrentProjects/ICurrentProjectsDndProps";
 import DragAndDrop from "../DragAndDrop/DragAndDrop";
 import CurrentProjectDraggable from "./CurrentProjectDraggable";
+import { IDragAndDropProps } from "../../interfaces/DragAndDrop/IDragAndDropProps";
+import { ICurrentProject } from "../../interfaces/CurrentProjects/ICurrentProject";
 
 export default function ProjectsDnd({
   items,
@@ -9,7 +10,7 @@ export default function ProjectsDnd({
   onDragEnd,
   onEdit,
   onDelete,
-}: ICurrentProjectsDndProps) {
+}: IDragAndDropProps<ICurrentProject>) {
   return (
     <>
       <DragAndDrop

@@ -1,6 +1,8 @@
 import React from 'react';
 import { IScheduleDraggableProps } from '../../../interfaces/Schedule/IScheduleDraggableProps';
 import DraggableItem from '../../DragAndDrop/DraggableItem';
+import { foldString } from '../../../util/foldString';
+import NewTabLink from '../../ui/Link/NewTabLink';
 
 export default function ScheduleDraggable({
   draggableId,
@@ -21,7 +23,11 @@ export default function ScheduleDraggable({
       <div className="w-96 font-medium">{name}</div>
       <div className="w-64 font-medium ml-32">{date}</div>
       <div className="w-44 font-medium ml-32 flex items-center">
-        <a className="text-blue ">{registrationLink}</a>
+        <NewTabLink
+          href={registrationLink}
+          text={foldString(registrationLink, 50)}
+          classes="text-blue"
+        />
       </div>
     </DraggableItem>
   );

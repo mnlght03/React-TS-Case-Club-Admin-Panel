@@ -5,7 +5,7 @@ import BlueButton from '../Button/BlueButton';
 import ProjectsHeader from './ProjectsHeader';
 import ClosableWindow from '../ClosableWindow/ClosableWindow';
 import NewProjectForm from './NewProject/NewProjectForm';
-import { ChangesStatus } from '../../interfaces/enums/ChangesStatus';
+import { ChangesStatus } from '../../enums/ChangesStatus';
 import { usePage } from '../../hooks/Page/usePage';
 import { IProject } from '../../interfaces/Projects/models/IProject';
 import ProjectsService from '../../services/Projects/ProjectsService';

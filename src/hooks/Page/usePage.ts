@@ -36,7 +36,7 @@ export function usePage<T extends { id: number }>(service: IService<T>) {
     await service.deleteAll(deletedItems);
   };
 
-  const { status } = useChangesStatus(newItems, deletedItems);
+  const { status } = useChangesStatus<T>(newItems, deletedItems);
 
   return {
     items,

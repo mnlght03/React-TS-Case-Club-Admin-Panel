@@ -2,6 +2,6 @@ import { IDraggableProps } from "../DragAndDrop/IDraggableProps";
 
 export interface IPartnerDrabbableProps extends IDraggableProps {
   text: string;
-  attendees: number;
+  attendees: string;
   logo: string;
 }

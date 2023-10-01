@@ -1,4 +1,5 @@
-import { IProjectsDndProps } from '../../../interfaces/Projects/IProjectsDndProps';
+import { IDragAndDropProps } from '../../../interfaces/DragAndDrop/IDragAndDropProps';
+import { IProject } from '../../../interfaces/Projects/models/IProject';
 import DragAndDrop from '../../DragAndDrop/DragAndDrop';
 import ProjectDraggable from './ProjectDraggable';
 
@@ -8,7 +9,7 @@ export default function ProjectsDnd({
   onDragEnd,
   onEdit,
   onDelete,
-}: IProjectsDndProps) {
+}: IDragAndDropProps<IProject>) {
   return (
     <>
       <DragAndDrop

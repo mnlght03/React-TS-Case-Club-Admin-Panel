@@ -2,12 +2,13 @@ import React, { useState } from 'react';
 import Header from '../Header/Header';
 import CurrentProjectsService from '../../services/CurrentProjects/CurrentProjectsService';
 import { usePage } from '../../hooks/Page/usePage';
-import { ChangesStatus } from '../../interfaces/enums/ChangesStatus';
+import { ChangesStatus } from '../../enums/ChangesStatus';
 import BlueButton from '../Button/BlueButton';
 import ClosableWindow from '../ClosableWindow/ClosableWindow';
 import NewCurrentProjectForm from './NewCurrentProjectForm';
 import CurrentProjectsHeader from './CurrentProjectsHeader';
 import CurrentProjectsDnd from './CurrentProjectsDnd';
+import { ICurrentProject } from '../../interfaces/CurrentProjects/ICurrentProject';
 
 export default function CurrentProjects() {
   const [isVisible, setIsVisible] = useState<boolean>(false);
@@ -46,7 +47,7 @@ export default function CurrentProjects() {
           title={'Новый текущий проект'}
         >
           <NewCurrentProjectForm
-            onSubmit={(project) => {
+            onSubmit={(project: ICurrentProject) => {
               console.log(project);
               addNewProject(project);
               setIsVisible(false);
