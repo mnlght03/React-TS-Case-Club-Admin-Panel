@@ -7,7 +7,6 @@ import { ReactComponent as IconAddInactive } from '../../assets/icons/icon-add-i
 import { ReactComponent as IconAddActive } from '../../assets/icons/icon-add-active.svg';
 import { useNewPartnerForm } from '../../hooks/Partners/useNewPartnerForm';
 import { IPartner } from '../../interfaces/Partners/IPartner';
-import Input from '../ui/Input/Input';
 
 
 export default function AddPartnerForm({ onSubmit }: IFormProps<IPartner>) {

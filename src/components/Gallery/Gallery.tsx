@@ -7,6 +7,8 @@ import GalleryHeader from './GalleryHeader';
 import GalleryDnd from './GalleryDnd';
 import BlueButton from '../Button/BlueButton';
 import ClosableWindow from '../ClosableWindow/ClosableWindow';
+import NewGalleryEventForm from './NewGalleryEventForm';
+import { IGalleryEvent } from '../../interfaces/Gallery/models/IGalleryEvent';
 
 export default function Gallery() {
   const [isVisible, setIsVisible] = useState<boolean>(false);
@@ -28,26 +30,31 @@ export default function Gallery() {
         onUpload={publishChanges}
       />
       <GalleryHeader />
-      <GalleryDnd items={events} droppableId={'Gallery'} />
+      <GalleryDnd
+        items={events}
+        droppableId={'Gallery'}
+        onDragEnd={onDragEnd}
+        onDelete={deleteEvent}
+      />
       <BlueButton
         onClick={() => setIsVisible(true)}
         text={'Добавить'}
         classes="ml-10 mt-6"
       />
-      {/* {isVisible && (
+      {isVisible && (
         <ClosableWindow
           onClose={() => setIsVisible(false)}
           title={'Новый текущий проект'}
         >
           <NewGalleryEventForm
-            onSubmit={(project: ICurrentProject) => {
-              console.log(project);
-              addNewProject(project);
+            onSubmit={(event: IGalleryEvent) => {
+              console.log(event);
+              addNewEvent(event);
               setIsVisible(false);
             }}
           />
         </ClosableWindow>
-      )} */}
+      )}
     </>
   );
 }

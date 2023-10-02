@@ -36,7 +36,7 @@ export default function NewCurrentProjectForm({ onSubmit }: IFormProps<ICurrentP
           placeholder="Введите здесь..."
           width="350px"
           subscript="Не больше 25 символов, включая пробелыи знаки препинания"
-          onChange={(e) => setProjectName(e.target.value)}
+          onChange={setProjectName}
           required
         />
         <TextInput
@@ -44,7 +44,7 @@ export default function NewCurrentProjectForm({ onSubmit }: IFormProps<ICurrentP
           placeholder="Введите здесь..."
           width="350px"
           subscript="Не больше 80 символов, включая пробелыи знаки препинания"
-          onChange={(e) => setProjectDescription(e.target.value)}
+          onChange={setProjectDescription}
           required
         />
         <Input
@@ -61,7 +61,7 @@ export default function NewCurrentProjectForm({ onSubmit }: IFormProps<ICurrentP
           placeholder="Введите здесь..."
           width="350px"
           subscript="Не больше 20 символов, включая пробелыи знаки препинания"
-          onChange={(e) => setProjectFormat(e.target.value)}
+          onChange={setProjectFormat}
           required
         />
         <TextInput
@@ -69,14 +69,14 @@ export default function NewCurrentProjectForm({ onSubmit }: IFormProps<ICurrentP
           placeholder="Введите здесь..."
           width="350px"
           subscript="Не больше 20 символов, включая пробелыи знаки препинания"
-          onChange={(e) => setProjectStartDate(e.target.value)}
+          onChange={setProjectStartDate}
           required
         />
         <TextInput
           label="Ссылка на подачу заявки"
           placeholder="Введите здесь..."
           width="350px"
-          onChange={(e) => setProjectRegistrationLink(e.target.value)}
+          onChange={setProjectRegistrationLink}
           required
         />
       </FormInputRow>
@@ -86,7 +86,7 @@ export default function NewCurrentProjectForm({ onSubmit }: IFormProps<ICurrentP
           placeholder="Введите здесь..."
           width="350px"
           subscript="Не больше 110 символов, включая пробелыи знаки препинания"
-          onChange={(e) => setProjectFirstPlateText(e.target.value)}
+          onChange={setProjectFirstPlateText}
           required
         />
         <TextInput
@@ -94,7 +94,7 @@ export default function NewCurrentProjectForm({ onSubmit }: IFormProps<ICurrentP
           placeholder="Введите здесь..."
           width="350px"
           subscript="Не больше 50 символов, включая пробелыи знаки препинания"
-          onChange={(e) => setProjectSecondPlateText(e.target.value)}
+          onChange={setProjectSecondPlateText}
           required
         />
         <TextInput
@@ -102,7 +102,7 @@ export default function NewCurrentProjectForm({ onSubmit }: IFormProps<ICurrentP
           placeholder="Введите здесь..."
           width="350px"
           subscript="Не больше 50 символов, включая пробелыи знаки препинания"
-          onChange={(e) => setProjectThirdPlateText(e.target.value)}
+          onChange={setProjectThirdPlateText}
           required
         />
       </FormInputRow>

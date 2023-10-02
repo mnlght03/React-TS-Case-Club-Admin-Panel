@@ -44,7 +44,7 @@ export default function OurTeam() {
       {isVisible && (
         <ClosableWindow
           onClose={() => setIsVisible(false)}
-          title={'Новый текущий проект'}
+          title={'Новый участник комадны'}
         >
           <NewMemberForm
             onSubmit={(member: ITeamMember) => {
