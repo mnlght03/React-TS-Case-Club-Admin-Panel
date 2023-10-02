@@ -12,19 +12,19 @@ export function useNewStageForm() {
   });
 
   const setNewStageName = (name: string) => {
-    setNewStage({ ...newStage, name: name.trim() });
+    setNewStage({ ...newStage, name: name });
   };
 
   const setNewStageTimeframe = (timeframe: string) => {
-    setNewStage({ ...newStage, timeframe: timeframe.trim() });
+    setNewStage({ ...newStage, timeframe: timeframe });
   };
 
   const setNewStageCoverage = (coverage: string) => {
-    setNewStage({ ...newStage, coverage: coverage.trim() });
+    setNewStage({ ...newStage, coverage: coverage });
   };
 
   const setNewStageAttendee = (attendee: string) => {
-    setNewStage({ ...newStage, attendee: attendee.trim() });
+    setNewStage({ ...newStage, attendee: attendee });
   };
 
   const clearNewStage = () => {

@@ -1,26 +1,13 @@
 import axios from 'axios';
 import { IService } from '../../interfaces/Service/IService';
 import { ISuccessStory } from '../../interfaces/SuccessStories/models/ISuccessStory';
-import { TagColor } from '../../enums/TagColor';
 
 export default class SuccessStoriesService implements IService<ISuccessStory> {
-  API_URL = import.meta.env.VITE_API_BASE + 'ongoing-story/';
+  API_URL = import.meta.env.VITE_API_BASE + 'success-story/';
 
   async fetchAll(): Promise<ISuccessStory[]> {
-    return [
-      {
-        id: 1,
-        priorityId: 1,
-        name: 'Никита Тычинский',
-        firstTag: 'Руководитель в 2021г.',
-        secondTag: 'PL Case School до 2021г.',
-        tagColor: TagColor.ORANGE,
-        position: 'Ex-Руководитель',
-        story: `Начиная с 3 курса и вплоть до её ухода из России, я работал в крупнейшей международной консалтинговой фирме Boston Consulting Grop (BCG). После небезызвестных событий я продолжил свой путь в российской консалтинговой фирме, где планирую развиваться ближайшие несколько лет, не упуская возможности роста.`,
-        profilePhotoUrl: 'tichinskiy_nikita_top.png',
-        fullSizePhotoUrl: 'tichinskiy_nikita_top.png',
-      },
-    ];
+    const data = (await axios.get(this.API_URL + 'get-all')).data;
+    return data;
   }
 
   async uploadAll(stories: ISuccessStory[]): Promise<void> {
@@ -37,6 +24,7 @@ export default class SuccessStoriesService implements IService<ISuccessStory> {
         formData.append('story', story.story);
         formData.append('profilePhoto', story.profilePhotoFile);
         formData.append('fullSizePhoto', story.fullSizePhotoFile);
+        console.log(formData);
 
         return axios({
           method: 'post',

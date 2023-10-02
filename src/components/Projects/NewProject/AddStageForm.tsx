@@ -36,7 +36,6 @@ export default function AddStageForm({ addStageFn }: IProps) {
           placeholder="Название этапа"
           value={newStage.name}
           onChange={setNewStageName}
-          required
         />
         <TextInput
           width="320px"
@@ -45,7 +44,6 @@ export default function AddStageForm({ addStageFn }: IProps) {
           limit={30}
           value={newStage.timeframe}
           onChange={setNewStageTimeframe}
-          required
         />
         <TextInput
           width="176px"

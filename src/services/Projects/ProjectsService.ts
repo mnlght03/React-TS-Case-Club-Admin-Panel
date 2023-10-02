@@ -6,52 +6,38 @@ export default class ProjectsService implements IService<IProject> {
   API_URL = import.meta.env.VITE_API_BASE + 'implemented-project/';
 
   async fetchAll(): Promise<IProject[]> {
-    // const data = await axios.get('http://caseclub-nsu.ru/implemented-project/get-all')
-    // console.log(data);
-    return [
-      {
-        id: 1,
-        priorityId: 1,
-        title: 'Курс по Product Owner-тематике и кейс-чемпионат совместно с Билайн',
-        isThisYear: true,
-        logoUrl: 'beeline.png',
-        stages: [],
-      },
-      {
-        id: 2,
-        priorityId: 1,
-        title: 'QWEASD',
-        isThisYear: true,
-        logoUrl: 'beelinebeelinebeelineBIGFILENAME.png',
-        stages: [],
-      },
-      {
-        id: 3,
-        priorityId: 1,
-        title: 'ZXCVBN',
-        isThisYear: true,
-        logoUrl: 'beeline.png',
-        stages: [],
-      },
-    ];
+    const data = (await axios.get(this.API_URL + 'get-all')).data;
+    console.log(data);
+    return data.map((item) => ({
+      id: item.id,
+      priorityId: item.priorityId,
+      title: item.name,
+      isThisYear: item.thisYearProject,
+      logoUrl: item.logoImageUrl,
+      stages: item.projectStageList,
+    }));
   }
 
   async uploadAll(projects: IProject[]): Promise<void> {
+    console.log(projects);
     if (projects.length === 0) return;
 
     await Promise.all(
-      projects.map((project) => {
+      projects.map(async (project) => {
         const formData = new FormData();
         formData.append('name', project.title);
         formData.append('thisYearProject', project.isThisYear.toString());
         formData.append('photo', project.logoFile);
+        console.log(formData);
 
-        return axios({
+        const response = await axios({
           method: 'post',
           url: this.API_URL + 'create',
           data: formData,
           headers: { 'Content-Type': 'multipart/form-data' },
         });
+
+        console.log(response);
       })
     );
   }

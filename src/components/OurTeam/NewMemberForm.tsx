@@ -7,6 +7,7 @@ import TextInput from '../ui/Input/TextInput';
 import SelectInput from '../ui/Input/SelectInput';
 import { TagColor } from '../../enums/TagColor';
 import ImageInput from '../ui/Input/ImageInput';
+import BlueButton from '../Button/BlueButton';
 
 export default function NewMemberForm({ onSubmit }: IFormProps<ITeamMember>) {
   const {
@@ -73,6 +74,11 @@ export default function NewMemberForm({ onSubmit }: IFormProps<ITeamMember>) {
           required
         />
       </FormInputRow>
+      <BlueButton
+        type="submit"
+        text={'Сохранить'}
+        classes="ml-10 mt-6"
+      />
     </form>
   );
 }

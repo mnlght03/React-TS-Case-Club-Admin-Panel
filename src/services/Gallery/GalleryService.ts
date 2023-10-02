@@ -6,14 +6,13 @@ export default class GalleryService implements IService<IGalleryEvent> {
   API_URL = import.meta.env.VITE_API_BASE + 'event/';
 
   async fetchAll(): Promise<IGalleryEvent[]> {
-    return [
-      {
-        id: 1,
-        priorityId: 1,
-        name: 'Крутое мероприятие',
-        photos: [],
-      },
-    ];
+    const data = (await axios.get(this.API_URL + 'get-all')).data;
+    return data.map((item) => ({
+      id: item.id,
+      priorityId: item.priorityId,
+      name: item.name,
+      photos: item.photoUrlList,
+    }));
   }
 
   async uploadAll(events: IGalleryEvent[]): Promise<void> {
@@ -24,6 +23,7 @@ export default class GalleryService implements IService<IGalleryEvent> {
         const formData = new FormData();
         formData.append('name', event.name);
         event.photoFiles?.forEach((photo) => formData.append('photo', photo));
+        console.log(formData);
 
         return axios({
           method: 'post',

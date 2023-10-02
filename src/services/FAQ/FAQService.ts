@@ -5,14 +5,8 @@ import { IService } from '../../interfaces/Service/IService';
 export default class FAQService implements IService<IFAQ> {
   API_URL = import.meta.env.VITE_API_BASE + 'faq/';
   async fetchAll(): Promise<IFAQ[]> {
-    return [
-      {
-        id: 1,
-        priorityId: 1,
-        question: 'Вопрос?',
-        answer: 'Ответ',
-      },
-    ];
+    const data = (await axios.get(this.API_URL + 'get-all')).data;
+    return data;
   }
 
   async uploadAll(items: IFAQ[]): Promise<void> {
@@ -23,6 +17,7 @@ export default class FAQService implements IService<IFAQ> {
         const formData = new FormData();
         formData.append('question', item.question);
         formData.append('answer', item.answer);
+        console.log(formData);
 
         return axios({
           method: 'post',

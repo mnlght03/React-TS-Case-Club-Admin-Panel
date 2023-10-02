@@ -32,8 +32,19 @@ export function usePage<T extends { id: number }>(service: IService<T>) {
   const onDragEnd = useOnDragEnd(items, setItems);
 
   const publishChanges = async () => {
-    await service.uploadAll(newItems);
-    await service.deleteAll(deletedItems);
+    try {
+      await service.uploadAll(newItems);
+      setNewItems([]);
+    } catch (e) {
+      console.log(e);
+    }
+    
+    try {
+      await service.deleteAll(deletedItems);
+      setDeletedItems([]);
+    } catch (e) {
+      console.log(e);
+    }
   };
 
   const { status } = useChangesStatus<T>(newItems, deletedItems);

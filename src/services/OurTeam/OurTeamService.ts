@@ -1,33 +1,13 @@
 import axios from 'axios';
 import { IService } from '../../interfaces/Service/IService';
-import { TagColor } from '../../enums/TagColor';
 import { ITeamMember } from '../../interfaces/OurTeam/models/ITeamMember';
 
 export default class OurTeamService implements IService<ITeamMember> {
   API_URL = import.meta.env.VITE_API_BASE + 'team/';
 
   async fetchAll(): Promise<ITeamMember[]> {
-    // const data = await axios.get('http://caseclub-nsu.ru/member/get-all')
-    return [
-      {
-        id: 1,
-        priorityId: 1,
-        name: 'Катешов Илья',
-        telegram: 'http_ilia',
-        role: 'Координатор',
-        tagColor: TagColor.BLUE,
-        profilePhotoUrl: '',
-      },
-      {
-        id: 2,
-        priorityId: 2,
-        name: 'Катешов Илья',
-        telegram: 'http_ilia',
-        role: 'Координатор',
-        tagColor: TagColor.BLUE,
-        profilePhotoUrl: '',
-      },
-    ];
+    const data = (await axios.get(this.API_URL + 'get-members')).data;
+    return data;
   }
 
   async uploadAll(members: ITeamMember[]): Promise<void> {
@@ -41,6 +21,7 @@ export default class OurTeamService implements IService<ITeamMember> {
         formData.append('role', member.role);
         formData.append('tagColor', member.tagColor);
         formData.append('photo', member.profilePhotoFile);
+        console.log(formData);
 
         return axios({
           method: 'post',
