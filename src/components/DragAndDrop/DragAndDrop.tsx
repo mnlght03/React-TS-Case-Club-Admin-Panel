@@ -1,5 +1,6 @@
 import React from 'react';
 import { DragDropContext, Droppable } from 'react-beautiful-dnd';
+import { IDragAndDropProps } from '../../interfaces/DragAndDrop/IDragAndDropProps';
 
 export default function DragAndDrop({ droppableId, children, onDragEnd }: IDragAndDropProps) {
   return (

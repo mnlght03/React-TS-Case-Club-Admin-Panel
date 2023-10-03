@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { IProject } from '../../interfaces/Projects/models/IProject';
 import { IService } from '../../interfaces/Service/IService';
+import { IProjectStage } from '../../interfaces/Projects/models/IProjectStage';
 
 export default class ProjectsService implements IService<IProject> {
   API_URL = import.meta.env.VITE_API_BASE + 'implemented-project/';
@@ -33,6 +34,29 @@ export default class ProjectsService implements IService<IProject> {
         const response = await axios({
           method: 'post',
           url: this.API_URL + 'create',
+          data: formData,
+          headers: { 'Content-Type': 'multipart/form-data' },
+        });
+
+        console.log(response);
+
+        await this.uploadStages(project.stages, response.data.id);
+      })
+    );
+  }
+
+  async uploadStages(stages: IProjectStage[], projectId: number): Promise<void> {
+    await Promise.all(
+      stages.map(async (stage) => {
+        const formData = new FormData();
+        formData.append('name', stage.name);
+        formData.append('timeFrame', stage.timeframe);
+        formData.append('coverage', stage.coverage);
+        formData.append('attendee', stage.attendee);
+
+        const response = await axios({
+          method: 'post',
+          url: this.API_URL + 'stage/add/' + projectId,
           data: formData,
           headers: { 'Content-Type': 'multipart/form-data' },
         });
