@@ -1,5 +1,5 @@
 import React from 'react';
-import DraggableItem from '../DragAndDrop/DraggableItem';
+import DraggableItem from '../ui/DragAndDrop/DraggableItem';
 import { IOurTeamDraggableProps } from '../../interfaces/OurTeam/IOurTeamDraggableProps';
 
 export default function OurTeamDraggable({

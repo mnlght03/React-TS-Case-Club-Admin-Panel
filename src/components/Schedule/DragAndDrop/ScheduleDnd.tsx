@@ -1,6 +1,6 @@
 import { IDragAndDropProps } from '../../../interfaces/DragAndDrop/IDragAndDropProps';
 import { ISchedule } from '../../../interfaces/Schedule/models/ISchedule';
-import DragAndDrop from '../../DragAndDrop/DragAndDrop';
+import DragAndDrop from '../../ui/DragAndDrop/DragAndDrop';
 import ScheduleDraggable from './ScheduleDraggable';
 
 export default function ScheduleDnd({

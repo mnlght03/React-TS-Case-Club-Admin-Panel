@@ -1,6 +1,6 @@
 import { IDragAndDropProps } from '../../../interfaces/DragAndDrop/IDragAndDropProps';
 import { IProjectStage } from '../../../interfaces/Projects/models/IProjectStage';
-import DragAndDrop from '../../DragAndDrop/DragAndDrop';
+import DragAndDrop from '../../ui/DragAndDrop/DragAndDrop';
 import ProjectStageDraggable from './ProjectStageDraggable';
 
 export default function ProjectStagesDnd({

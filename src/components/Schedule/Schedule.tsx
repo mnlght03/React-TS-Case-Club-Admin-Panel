@@ -1,40 +1,32 @@
-import React, { useState } from 'react';
-import Header from '../Header/Header';
-import { usePage } from '../../hooks/Page/usePage';
-import ScheduleService from '../../services/Schedule/ScheduleService';
+import React, {useContext, useState} from 'react';
+import Header from '../ui/Header/Header';
 import { ChangesStatus } from '../../enums/ChangesStatus';
 import SchedulesHeader from './SchedulesHeader';
 import ScheduleDnd from './DragAndDrop/ScheduleDnd';
-import ClosableWindow from '../ClosableWindow/ClosableWindow';
+import ClosableWindow from '../ui/ClosableWindow/ClosableWindow';
 import NewScheduleForm from './NewScheduleForm';
-import BlueButton from '../Button/BlueButton';
+import BlueButton from '../ui/Button/BlueButton';
 import { ISchedule } from '../../interfaces/Schedule/models/ISchedule';
+import {GlobalContext} from "../../store";
 
 export default function Schedule() {
   const [isVisible, setIsVisible] = useState<boolean>(false);
 
-  const {
-    items: schedules,
-    status,
-    addNewItem: addNewSchedule,
-    deleteItem: deleteSchedule,
-    onDragEnd,
-    publishChanges,
-  } = usePage(new ScheduleService());
+  const {schedule} = useContext(GlobalContext)
 
   return (
     <>
       <Header
         title={'Расписание мероприятий'}
-        status={status || ChangesStatus.NONE}
-        onUpload={publishChanges}
+        status={schedule.status || ChangesStatus.NONE}
+        onUpload={schedule.publishChanges}
       />
       <SchedulesHeader />
       <ScheduleDnd
-        items={schedules}
+        items={schedule.items}
         droppableId={'Schdule'}
-        onDragEnd={onDragEnd}
-        onDelete={deleteSchedule}
+        onDragEnd={schedule.onDragEnd}
+        onDelete={schedule.deleteItem}
       />
       <BlueButton
         onClick={() => setIsVisible(true)}
@@ -47,9 +39,9 @@ export default function Schedule() {
           title={'Новый текущий проект'}
         >
           <NewScheduleForm
-            onSubmit={(schedule: ISchedule) => {
-              console.log(schedule);
-              addNewSchedule(schedule);
+            onSubmit={(newSchedule: ISchedule) => {
+              console.log(newSchedule);
+              schedule.addNewItem(newSchedule);
               setIsVisible(false);
             }}
           />

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import DraggableItem from '../../DragAndDrop/DraggableItem';
+import DraggableItem from '../../ui/DragAndDrop/DraggableItem';
 import { IProjectStageDraggableProps } from '../../../interfaces/Projects/IProjectStageDraggableProps';
 
 export default function ProjectStageDraggable({

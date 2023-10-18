@@ -1,32 +1,29 @@
-import React from 'react';
-import Header from '../Header/Header';
-import { usePage } from '../../hooks/Page/usePage';
-import FAQService from '../../services/FAQ/FAQService';
-import { ChangesStatus } from '../../enums/ChangesStatus';
+import React, {useContext} from 'react';
+import Header from '../ui/Header/Header';
+import {ChangesStatus} from '../../enums/ChangesStatus';
 import FAQHeader from './FAQHeader';
 import FAQDnd from './FAQDnd';
 import AddFaqForm from './AddFaqForm';
+import {GlobalContext} from "../../store";
 
 export default function FAQ() {
-  const { items, status, addNewItem, deleteItem, onDragEnd, publishChanges } = usePage(
-    new FAQService()
-  );
+    const {faq} = useContext(GlobalContext);
 
-  return (
-    <>
-      <Header
-        title={'FAQ'}
-        status={status || ChangesStatus.NONE}
-        onUpload={publishChanges}
-      />
-      <FAQHeader />
-      <FAQDnd
-        items={items}
-        droppableId={'FAQ'}
-        onDragEnd={onDragEnd}
-        onDelete={deleteItem}
-      />
-      <AddFaqForm onSubmit={addNewItem} />
-    </>
-  );
+    return (
+        <>
+            <Header
+                title={'FAQ'}
+                status={faq.status || ChangesStatus.NONE}
+                onUpload={faq.publishChanges}
+            />
+            <FAQHeader/>
+            <FAQDnd
+                items={faq.items}
+                droppableId={'FAQ'}
+                onDragEnd={faq.onDragEnd}
+                onDelete={faq.deleteItem}
+            />
+            <AddFaqForm onSubmit={faq.addNewItem}/>
+        </>
+    );
 }

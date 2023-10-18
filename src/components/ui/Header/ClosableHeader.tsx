@@ -1,6 +1,6 @@
 import React from 'react';
-import { IHeaderProps } from '../../interfaces/Header/IHeaderProps';
-import { ReactComponent as IconClose } from '../../assets/icons/icon-x.svg';
+import { IHeaderProps } from '../../../interfaces/Header/IHeaderProps.ts';
+import { ReactComponent as IconClose } from '../../../assets/icons/icon-x.svg';
 
 export default function ClosableHeader({ title, onClose }: IHeaderProps) {
   return (

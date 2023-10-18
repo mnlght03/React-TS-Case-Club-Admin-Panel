@@ -1,5 +1,5 @@
 import React from "react";
-import DragAndDrop from "../DragAndDrop/DragAndDrop";
+import DragAndDrop from "../ui/DragAndDrop/DragAndDrop";
 import { IDragAndDropProps } from "../../interfaces/DragAndDrop/IDragAndDropProps";
 import { ITeamMember } from "../../interfaces/OurTeam/models/ITeamMember";
 import OurTeamDraggable from "./OurTeamDraggable";

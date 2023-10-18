@@ -1,5 +1,5 @@
 import React from 'react';
-import DragAndDrop from '../DragAndDrop/DragAndDrop';
+import DragAndDrop from '../ui/DragAndDrop/DragAndDrop';
 import { IDragAndDropProps } from '../../interfaces/DragAndDrop/IDragAndDropProps';
 import { IFAQ } from '../../interfaces/FAQ/models/IFAQ';
 import FAQDraggable from './FAQDraggable';

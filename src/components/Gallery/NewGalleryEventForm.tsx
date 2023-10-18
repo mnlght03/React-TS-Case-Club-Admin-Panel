@@ -5,7 +5,7 @@ import NewPhotosForm from './NewPhotosForm';
 import { IFormProps } from '../../interfaces/Form/IFormProps';
 import FormInputRow from '../Projects/NewProject/FormInputRow';
 import TextInput from '../ui/Input/TextInput';
-import BlueButton from '../Button/BlueButton';
+import BlueButton from '../ui/Button/BlueButton';
 
 export default function NewGalleryEventForm({ onSubmit }: IFormProps<IGalleryEvent>) {
   const { newEvent, setEventName, addFiles, clearNewEvent, photoChunks } =

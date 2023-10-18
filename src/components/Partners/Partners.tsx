@@ -1,36 +1,29 @@
-import React from 'react';
-import Header from '../Header/Header';
+import React, {useContext} from 'react';
+import Header from '../ui/Header/Header';
 import PartnersHeader from './PartnersHeader';
 import PartnersDnd from './PartnersDnd';
 import AddPartnerForm from './AddPartnerForm';
-import { usePage } from '../../hooks/Page/usePage';
-import PartnersService from '../../services/Partners/PartnersService';
-import { ChangesStatus } from '../../enums/ChangesStatus';
+import {ChangesStatus} from '../../enums/ChangesStatus';
+import {GlobalContext} from "../../store";
 
 export default function Partners() {
-  const {
-    items: partners,
-    status,
-    addNewItem: addNewPartner,
-    deleteItem: deletePartner,
-    onDragEnd,
-    publishChanges,
-  } = usePage(new PartnersService());
-  return (
-    <>
-      <Header
-        title={'С нами сотрудничали'}
-        status={status || ChangesStatus.NONE}
-        onUpload={publishChanges}
-      />
-      <PartnersHeader />
-      <PartnersDnd
-        items={partners}
-        droppableId={'Partners'}
-        onDelete={deletePartner}
-        onDragEnd={onDragEnd}
-      />
-      <AddPartnerForm onSubmit={addNewPartner} />
-    </>
-  );
+    const {partners} = useContext(GlobalContext);
+
+    return (
+        <>
+            <Header
+                title={'С нами сотрудничали'}
+                status={partners.status || ChangesStatus.NONE}
+                onUpload={partners.publishChanges}
+            />
+            <PartnersHeader/>
+            <PartnersDnd
+                items={partners.items}
+                droppableId={'Partners'}
+                onDelete={partners.deleteItem}
+                onDragEnd={partners.onDragEnd}
+            />
+            <AddPartnerForm onSubmit={partners.addNewItem}/>
+        </>
+    );
 }

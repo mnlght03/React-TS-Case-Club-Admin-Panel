@@ -1,6 +1,6 @@
 import React from "react";
-import CloseableHeader from "../Header/ClosableHeader";
-import { IClosableWindowProps } from "../../interfaces/ClosableWindow/IClosableWindowProps";
+import CloseableHeader from "../Header/ClosableHeader.tsx";
+import { IClosableWindowProps } from "../../../interfaces/ClosableWindow/IClosableWindowProps.ts";
 
 export default function ClosableWindow({title, onClose, children}: IClosableWindowProps) {
   return (

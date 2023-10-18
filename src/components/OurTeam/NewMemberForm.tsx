@@ -7,7 +7,7 @@ import TextInput from '../ui/Input/TextInput';
 import SelectInput from '../ui/Input/SelectInput';
 import { TagColor } from '../../enums/TagColor';
 import ImageInput from '../ui/Input/ImageInput';
-import BlueButton from '../Button/BlueButton';
+import BlueButton from '../ui/Button/BlueButton';
 
 export default function NewMemberForm({ onSubmit }: IFormProps<ITeamMember>) {
   const {

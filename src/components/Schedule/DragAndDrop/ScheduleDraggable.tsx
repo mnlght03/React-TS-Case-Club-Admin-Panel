@@ -1,6 +1,6 @@
 import React from 'react';
 import { IScheduleDraggableProps } from '../../../interfaces/Schedule/IScheduleDraggableProps';
-import DraggableItem from '../../DragAndDrop/DraggableItem';
+import DraggableItem from '../../ui/DragAndDrop/DraggableItem';
 import { foldString } from '../../../util/foldString';
 import NewTabLink from '../../ui/Link/NewTabLink';
 

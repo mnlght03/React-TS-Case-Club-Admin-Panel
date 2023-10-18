@@ -1,6 +1,6 @@
 import { IDragAndDropProps } from '../../../interfaces/DragAndDrop/IDragAndDropProps';
 import { IProject } from '../../../interfaces/Projects/models/IProject';
-import DragAndDrop from '../../DragAndDrop/DragAndDrop';
+import DragAndDrop from '../../ui/DragAndDrop/DragAndDrop';
 import ProjectDraggable from './ProjectDraggable';
 
 export default function ProjectsDnd({

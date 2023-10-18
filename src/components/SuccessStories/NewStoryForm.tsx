@@ -2,7 +2,7 @@ import React from 'react';
 import { IFormProps } from '../../interfaces/Form/IFormProps';
 import FormInputRow from '../Projects/NewProject/FormInputRow';
 import TextInput from '../ui/Input/TextInput';
-import BlueButton from '../Button/BlueButton';
+import BlueButton from '../ui/Button/BlueButton';
 import { ISuccessStory } from '../../interfaces/SuccessStories/models/ISuccessStory';
 import { useNewSuccessStory } from '../../hooks/SuccessStories/useNewSuccessStory';
 import SelectInput from '../ui/Input/SelectInput';

@@ -1,5 +1,5 @@
 import React from 'react';
-import DraggableItem from '../DragAndDrop/DraggableItem';
+import DraggableItem from '../ui/DragAndDrop/DraggableItem';
 import { IFAQDraggableProps } from '../../interfaces/FAQ/IFAQDraggableProps';
 
 export default function FAQDraggable({

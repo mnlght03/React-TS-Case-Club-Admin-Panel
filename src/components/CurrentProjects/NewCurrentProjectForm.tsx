@@ -3,7 +3,7 @@ import { IFormProps } from '../../interfaces/Form/IFormProps';
 import { useNewCurrentProject } from '../../hooks/CurrentProjects/useNewCurrentProject';
 import FormInputRow from '../Projects/NewProject/FormInputRow';
 import TextInput from '../ui/Input/TextInput';
-import BlueButton from '../Button/BlueButton';
+import BlueButton from '../ui/Button/BlueButton';
 import Input from '../ui/Input/Input';
 import { ICurrentProject } from '../../interfaces/CurrentProjects/ICurrentProject';
 

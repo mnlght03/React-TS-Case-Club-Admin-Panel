@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { ISidebarLinkProps } from '../../interfaces/Sidebar/ISidebarLinkProps';
+import { ISidebarLinkProps } from '../../../interfaces/Sidebar/ISidebarLinkProps.ts';
 
 export default function SidebarLink({ title, to }: ISidebarLinkProps) {
   return (

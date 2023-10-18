@@ -1,10 +1,10 @@
 import React from 'react';
 import { Draggable } from 'react-beautiful-dnd';
 
-import { ReactComponent as IconDrag } from '../../assets/icons/icon-drag.svg';
-import { ReactComponent as IconEdit } from '../../assets/icons/icon-edit.svg';
-import { ReactComponent as IconTrash } from '../../assets/icons/icon-trash.svg';
-import { IDraggableProps } from '../../interfaces/DragAndDrop/IDraggableProps';
+import { ReactComponent as IconDrag } from '../../../assets/icons/icon-drag.svg';
+import { ReactComponent as IconEdit } from '../../../assets/icons/icon-edit.svg';
+import { ReactComponent as IconTrash } from '../../../assets/icons/icon-trash.svg';
+import { IDraggableProps } from '../../../interfaces/DragAndDrop/IDraggableProps.ts';
 
 export default function DraggableItem({
   draggableId,

@@ -1,5 +1,5 @@
 import React from "react";
-import { IMainProps } from "../../interfaces/Main/IMainProps";
+import { IMainProps } from "../../../interfaces/Main/IMainProps.ts";
 
 export default function Main({children}: IMainProps) {
   return (

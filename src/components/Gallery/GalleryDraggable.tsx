@@ -1,6 +1,6 @@
 import React from 'react';
 import { IGalleryDraggableProps } from '../../interfaces/Gallery/IGalleryDraggableProps';
-import DraggableItem from '../DragAndDrop/DraggableItem';
+import DraggableItem from '../ui/DragAndDrop/DraggableItem';
 
 export default function GalleryDraggable({
   draggableId,

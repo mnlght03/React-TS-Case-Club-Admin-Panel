@@ -1,7 +1,7 @@
 import React from "react";
 import { ReactComponent as IconDownload } from '../../assets/icons/icon-download.svg';
 import { ICurrentProjectDraggableProps } from "../../interfaces/CurrentProjects/ICurrentProjectDraggableProps";
-import DraggableItem from "../DragAndDrop/DraggableItem";
+import DraggableItem from "../ui/DragAndDrop/DraggableItem";
 
 export default function CurrentProjectDraggable({
   draggableId,

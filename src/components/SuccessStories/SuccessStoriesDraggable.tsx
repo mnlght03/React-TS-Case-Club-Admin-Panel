@@ -1,6 +1,6 @@
 import React from 'react';
 import { ReactComponent as IconDownload } from '../../assets/icons/icon-download.svg';
-import DraggableItem from '../DragAndDrop/DraggableItem';
+import DraggableItem from '../ui/DragAndDrop/DraggableItem';
 import { foldString } from '../../util/foldString';
 import { ISuccessStoriesDraggableProps } from '../../interfaces/SuccessStories/ISuccessStoriesDraggableProps';
 

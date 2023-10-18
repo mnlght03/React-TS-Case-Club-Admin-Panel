@@ -1,5 +1,5 @@
 import React from "react";
-import DragAndDrop from "../DragAndDrop/DragAndDrop";
+import DragAndDrop from "../ui/DragAndDrop/DragAndDrop";
 import { IDragAndDropProps } from "../../interfaces/DragAndDrop/IDragAndDropProps";
 import { ISuccessStory } from "../../interfaces/SuccessStories/models/ISuccessStory";
 import SuccessStoriesDraggable from "./SuccessStoriesDraggable";

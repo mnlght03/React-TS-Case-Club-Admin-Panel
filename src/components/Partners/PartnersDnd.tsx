@@ -1,6 +1,6 @@
 import { IDragAndDropProps } from "../../interfaces/DragAndDrop/IDragAndDropProps";
 import { IPartner } from "../../interfaces/Partners/IPartner";
-import DragAndDrop from "../DragAndDrop/DragAndDrop";
+import DragAndDrop from "../ui/DragAndDrop/DragAndDrop";
 import PartnerDraggable from "./PartnerDraggable";
 
 export default function PartnersDnd({

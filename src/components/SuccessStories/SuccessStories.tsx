@@ -1,40 +1,32 @@
-import React, { useState } from 'react';
-import Header from '../Header/Header';
-import SuccessStoriesService from '../../services/SuccessStories/SuccessStoriesService';
-import { usePage } from '../../hooks/Page/usePage';
+import React, {useContext, useState} from 'react';
+import Header from '../ui/Header/Header';
 import { ChangesStatus } from '../../enums/ChangesStatus';
 import SuccessStoriesHeader from './SuccessStoriesHeader';
 import SuccessStoriesDnd from './SuccessStoriesDnd';
-import BlueButton from '../Button/BlueButton';
-import ClosableWindow from '../ClosableWindow/ClosableWindow';
+import BlueButton from '../ui/Button/BlueButton';
+import ClosableWindow from '../ui/ClosableWindow/ClosableWindow';
 import NewStoryForm from './NewStoryForm';
 import { ISuccessStory } from '../../interfaces/SuccessStories/models/ISuccessStory';
+import {GlobalContext} from "../../store";
 
 export default function SuccessStories() {
   const [isVisible, setIsVisible] = useState<boolean>(false);
 
-  const {
-    items: stories,
-    status,
-    addNewItem: addNewStory,
-    deleteItem: deleteStory,
-    onDragEnd,
-    publishChanges,
-  } = usePage(new SuccessStoriesService());
+  const {successStories} = useContext(GlobalContext);
 
   return (
     <>
       <Header
         title={'Истории успеха'}
-        status={status || ChangesStatus.NONE}
-        onUpload={publishChanges}
+        status={successStories.status || ChangesStatus.NONE}
+        onUpload={successStories.publishChanges}
       />
       <SuccessStoriesHeader />
       <SuccessStoriesDnd
-        items={stories}
+        items={successStories.items}
         droppableId={'SuccessStories'}
-        onDragEnd={onDragEnd}
-        onDelete={deleteStory}
+        onDragEnd={successStories.onDragEnd}
+        onDelete={successStories.deleteItem}
       />
       <BlueButton
         onClick={() => setIsVisible(true)}
@@ -49,7 +41,7 @@ export default function SuccessStories() {
           <NewStoryForm
             onSubmit={(story: ISuccessStory) => {
               console.log(story);
-              addNewStory(story);
+              successStories.addNewItem(story);
               setIsVisible(false);
             }}
           />

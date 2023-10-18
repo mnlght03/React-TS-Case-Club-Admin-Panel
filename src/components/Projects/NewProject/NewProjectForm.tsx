@@ -5,7 +5,7 @@ import ImageInput from '../../ui/Input/ImageInput';
 import FormInputRow from './FormInputRow';
 import ProjectStagesDnd from '../DragAndDrop/ProjectStagesDnd';
 import AddStageForm from './AddStageForm';
-import BlueButton from '../../Button/BlueButton';
+import BlueButton from '../../ui/Button/BlueButton';
 import { IFormProps } from '../../../interfaces/Form/IFormProps';
 import { useNewProjectForm } from '../../../hooks/Projects/useNewProjectForm';
 import { IProject } from '../../../interfaces/Projects/models/IProject';

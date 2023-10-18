@@ -1,6 +1,6 @@
 import React from 'react';
-import Sidebar from '../components/Sidebar/Sidebar';
-import Main from '../components/Main/Main';
+import Sidebar from '../components/ui/Sidebar/Sidebar';
+import Main from '../components/ui/Main/Main';
 import { ILayoutProps } from '../interfaces/layout';
 
 export default function AdminPanelLayout({component}: ILayoutProps) {

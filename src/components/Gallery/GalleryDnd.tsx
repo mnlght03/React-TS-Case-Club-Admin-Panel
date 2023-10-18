@@ -1,7 +1,7 @@
 import React from 'react';
 import { IDragAndDropProps } from '../../interfaces/DragAndDrop/IDragAndDropProps';
 import { IGalleryEvent } from '../../interfaces/Gallery/models/IGalleryEvent';
-import DragAndDrop from '../DragAndDrop/DragAndDrop';
+import DragAndDrop from '../ui/DragAndDrop/DragAndDrop';
 import GalleryDraggable from './GalleryDraggable';
 
 export default function GalleryDnd({

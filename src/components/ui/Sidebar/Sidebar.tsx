@@ -1,7 +1,7 @@
 import React from 'react';
 
-import ImgLogo from '../../assets/logo-admin.png';
-import SidebarLinks from './SidebarLinks';
+import ImgLogo from '../../../assets/logo-admin.png';
+import SidebarLinks from './SidebarLinks.tsx';
 
 export default function Sidebar() {
   return (

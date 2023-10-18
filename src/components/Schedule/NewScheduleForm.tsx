@@ -6,7 +6,7 @@ import FormInputRow from '../Projects/NewProject/FormInputRow';
 import TextInput from '../ui/Input/TextInput';
 import SelectInput from '../ui/Input/SelectInput';
 import { TagColor } from '../../enums/TagColor';
-import BlueButton from '../Button/BlueButton';
+import BlueButton from '../ui/Button/BlueButton';
 
 export default function NewSchdeuleForm({ onSubmit }: IFormProps<ISchedule>) {
   const {
