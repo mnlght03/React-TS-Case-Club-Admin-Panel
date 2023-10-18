@@ -1,15 +1,15 @@
 import React from 'react';
 
-import { ReactComponent as IconDownload } from '../../../assets/icons/icon-download.svg';
 import DraggableItem from '../../ui/DragAndDrop/DraggableItem';
 import { IProjectDraggableProps } from '../../../interfaces/Projects/IProjectDraggableProps';
+import DownloadableLink from "../../ui/Link/DownloadableLink.tsx";
 
 export default function ProjectDraggable({
   draggableId,
   index,
   title,
   isLastYear,
-  logo,
+  logoUrl,
   onEdit,
   onDelete,
 }: IProjectDraggableProps) {
@@ -23,14 +23,7 @@ export default function ProjectDraggable({
       <div className="w-96 font-medium">{title}</div>
       <div className="w-64 font-medium ml-32">{isLastYear ? 'да' : 'нет'}</div>
       <div className="w-44 font-medium ml-32 flex items-center">
-        <span className="text-blue ">{logo}</span>
-        <IconDownload
-          className="inline ml-4"
-          style={{
-            minWidth: '20px',
-            minHeight: '20px',
-          }}
-        />
+        <DownloadableLink fileUrl={logoUrl} />
       </div>
     </DraggableItem>
   );

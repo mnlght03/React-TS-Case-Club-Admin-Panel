@@ -23,7 +23,7 @@ export default function ProjectsDnd({
             index={idx}
             title={item.title}
             isLastYear={item.isThisYear}
-            logo={item.logoUrl || ''}
+            logoUrl={item.logoUrl || ''}
             onEdit={() => onEdit && onEdit(item)}
             onDelete={() => onDelete && onDelete(item)}
           />

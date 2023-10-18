@@ -1,8 +1,7 @@
 import React from 'react';
-import { ReactComponent as IconDownload } from '../../assets/icons/icon-download.svg';
 import DraggableItem from '../ui/DragAndDrop/DraggableItem';
-import { foldString } from '../../util/foldString';
 import { ISuccessStoriesDraggableProps } from '../../interfaces/SuccessStories/ISuccessStoriesDraggableProps';
+import DownloadableLink from "../ui/Link/DownloadableLink.tsx";
 
 export default function SuccessStoriesDraggable({
   draggableId,
@@ -23,14 +22,7 @@ export default function SuccessStoriesDraggable({
       <div className="w-64 font-medium">{name}</div>
       <div className="w-64 font-medium ml-32">{position}</div>
       <div className="w-64 font-medium ml-32 flex items-center">
-        <span className="text-blue ">{foldString(profilePhotoUrl, 50)}</span>
-        <IconDownload
-          className="inline ml-4"
-          style={{
-            minWidth: '20px',
-            minHeight: '20px',
-          }}
-        />
+        <DownloadableLink fileUrl={profilePhotoUrl} />
       </div>
     </DraggableItem>
   );

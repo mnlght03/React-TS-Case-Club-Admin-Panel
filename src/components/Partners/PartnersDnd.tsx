@@ -23,7 +23,7 @@ export default function PartnersDnd({
             index={idx}
             text={item.text}
             attendees={item.attendees}
-            logo={item.logoUrl || ''}
+            logoUrl={item.logoUrl || ''}
             onEdit={() => onEdit && onEdit(item)}
             onDelete={() => onDelete && onDelete(item)}
           />
